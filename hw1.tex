@@ -4,10 +4,10 @@
 \usepackage{enumerate} 
 \usepackage{amssymb} 
 \usepackage{amsmath}
+\usepackage{xcolor}
 
 \newcommand{\st}{~\mid~}
 \newcommand{\ind}{$~~~$}
-\usepackage{xcolor}
 
 \begin{document}
 
@@ -16,55 +16,55 @@
 \hfill{Due: Monday, October 6 at 11:59pm}
 
 \begin{enumerate}
-\item \textbf{Computation of a String on a DFA (Section 1)} \newline 
 
-\emph{Question 1: Trace the computation on input w = abba. 
-List the sequence of states visited (including start state) and state whether the input w is
-accepted. (refer to the DFA for question 1 in the writeup)} \newline 
+\item \textbf{Computation of a String on a DFA (Section 1)} \\
+\emph{Question 1: Trace the computation on input $w = abba$. 
+List the sequence of states visited (including start state) and state whether the input $w$ is accepted.} \\
 
-\boxed{ABBA \rightarrow $~q_0,q_1,q_0,q_0,q_1$ \newline 
-\textbf{\ (The input w will not be accepted as the final state is $q_1$, and not $q_2$)}} \newline
+\[
+q_0 \xrightarrow{a} q_1 \xrightarrow{b} q_0 \xrightarrow{b} q_0 \xrightarrow{a} q_1
+\]
 
-\item \textbf{Drawing a DFA (Section 2)} \newline 
+The input $w$ is \textbf{not accepted} because the final state $q_1$ is not in $F$.
 
-\emph{Question 5: Draw a DFA over the alphabet {0,1} that accepts all strings containing an even number
-of 0’s.}
+\item \textbf{Drawing a DFA (Section 2)} \\
+\emph{Question 5: Draw a DFA over the alphabet $\{0,1\}$ that accepts all strings containing an even number of 0’s.}
 
-\begin{figure}[h!] % [h!] is a float specifier for placement (here, approximately here)
-    \centering % Centers the image
-    \includegraphics[width=0.75\linewidth]{images/cse105q5.png} % Adjust width as needed
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\linewidth]{images/cse105q5.png}
+    \caption{DFA accepting strings with an even number of 0’s.}
 \end{figure}
 
-\item \textbf{Describing what a DFA does (Section 3)} \newline 
+\item \textbf{Describing what a DFA does (Section 3)} \\
+\emph{Question 9: Describe in words the set of strings accepted by $S$.
+Give two examples of strings $S$ accepts and two it rejects.} \\
 
-\emph{Question 9: Describe in words the set of strings accepted by S.
-Give two examples of strings S accepts and two it rejects (Refer to DFA in the writeup for question 9)} \newline 
-
-\textbf{Description:} The set of strings accepted by S includes all strings in the described $\sum$ (refer to writeup) 
-that end in "1." \newline 
-
-\textbf{Accepted String Examples: }"01","11" \newline
-\textbf{Rejected String Examples: }" ","10" \newline
+\textbf{Description:} The set of strings accepted by $S$ includes all strings over the described $\Sigma$ that end in \texttt{1}. \\[0.5em]
+\textbf{Accepted Strings:} 01, 11 \\
+\textbf{Rejected Strings:} $" "$, 10
 
 \pagebreak
 
-\item \textbf{Formal Definition of a DFA (Section 4)} \newline
+\item \textbf{Formal Definition of a DFA (Section 4)} \\
+\emph{Question 13: Given the DFA below, write its 5-tuple $(Q, \Sigma, \delta, q_0, F)$ explicitly. Use a table to define $\delta$.} \\
 
-\emph{Question 13: Given the DFA below, write its 5-tuple $(Q, \Sigma, \delta, q_0, F)$ explicitly. Use a table to define O:} \newline
+\[
+Q = \{q_1, q_2\}, \quad \Sigma = \{a,b\}, \quad q_0 = q_2, \quad F = \{q_1\}.
+\]
 
-\textbf{5-tuple:} DFA = ($Q$ = \{$q_1,q_2$\}, $\Sigma$ =\{a,b\}, $\delta$, $q_0=\{q_2\}$, $F$=\{$q_1$\}) \newline 
-
-\textbf{Table to define O: }
 \begin{center}
-    \begin{tabular}{||c || c c||} 
-     \hline
-         & \textbf{a} & \textbf{b}\\ [0.5ex] 
-     \hline\hline
-     \textbf{$q_1$} & $q_1$ & $q_2$\\ 
-     \hline
-     \textbf{$q_2$} & $q_1$ & $q_2$ \\
-    \end{tabular}
-    \end{center}
+\begin{tabular}{||c||c c||}
+\hline
+ & a & b \\
+\hline\hline
+$q_1$ & $q_1$ & $q_2$ \\
+\hline
+$q_2$ & $q_1$ & $q_2$ \\
+\hline
+\end{tabular}
+\end{center}
+
 \end{enumerate}
 
 \end{document}
