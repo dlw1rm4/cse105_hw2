@@ -22,8 +22,8 @@
 List the sequence of states visited (including start state) and state whether the input w is
 accepted. (refer to the DFA for question 1 in the writeup)} \newline 
 
-\boxed{ABBA \rightarrow q0,q1,q0,q0,q1 \newline 
-\textbf{\ (The input w will not be accepted as the final state is q1, and not q2)}} \newline
+\boxed{ABBA \rightarrow $~q_0,q_1,q_0,q_0,q_1$ \newline 
+\textbf{\ (The input w will not be accepted as the final state is $q_1$, and not $q_2$)}} \newline
 
 \item \textbf{Drawing a DFA (Section 2)} \newline 
 
@@ -41,7 +41,7 @@ of 0’s.}
 Give two examples of strings S accepts and two it rejects (Refer to DFA in the writeup for question 9)} \newline 
 
 \textbf{Description:} The set of strings accepted by S includes all strings in the described $\sum$ (refer to writeup) 
-that end in "1" \newline 
+that end in "1." \newline 
 
 \textbf{Accepted String Examples: }"01","11" \newline
 \textbf{Rejected String Examples: }" ","10" \newline
@@ -50,9 +50,9 @@ that end in "1" \newline
 
 \item \textbf{Formal Definition of a DFA (Section 4)} \newline
 
-\emph{Question 13: Given the DFA below, write its 5-tuple (Q, Z, O, q0, F) explicitly. Use a table to define O:} \newline
+\emph{Question 13: Given the DFA below, write its 5-tuple $(Q, \Sigma, \delta, q_0, F)$ explicitly. Use a table to define O:} \newline
 
-\textbf{5-tuple:} DFA = (Q = \{q1,q2\}, Z=\{a,b\}, O, q0=\{q2\}, F=\{q1\}) \newline 
+\textbf{5-tuple:} DFA = ($Q$ = \{$q_1,q_2$\}, $\Sigma$ =\{a,b\}, $\delta$, $q_0=\{q_2\}$, $F$=\{$q_1$\}) \newline 
 
 \textbf{Table to define O: }
 \begin{center}
@@ -60,9 +60,9 @@ that end in "1" \newline
      \hline
          & \textbf{a} & \textbf{b}\\ [0.5ex] 
      \hline\hline
-     \textbf{q1} & q1 & q2\\ 
+     \textbf{$q_1$} & $q_1$ & $q_2$\\ 
      \hline
-     \textbf{q2} & q1 & q2 \\
+     \textbf{$q_2$} & $q_1$ & $q_2$ \\
     \end{tabular}
     \end{center}
 \end{enumerate}
