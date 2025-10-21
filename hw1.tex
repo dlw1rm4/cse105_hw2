@@ -5,66 +5,61 @@
 \usepackage{amssymb} 
 \usepackage{amsmath}
 \usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{float}
 
 \pagestyle{fancy}
 \fancyhf{} 
 \fancyhead[L]{CSE 105 Fall 2025}
-\fancyhead[C]{Homework 1}
-\fancyhead[R]{Due: Monday October 6 at 11:59pm}
-\fancyfoot[L]{GROUP: Robin Villareal (A17450864), Tarun Upadhyay (A19113510), Kaitlyn Nguy (A19142421)}
+\fancyhead[C]{Homework 3}
+\fancyhead[R]{Due: Monday October 20 at 11:59pm}
+\fancyfoot[L]{GROUP: Robin Villareal (A17450864), Tarun Upadhyay (A19113510), Kaitlyn Nguy (A19142421), Michelle Ho (A17326824)}
 \fancyfoot[R]{\thepage} 
 
 \begin{document}
 
 \begin{enumerate}
 
-\item \textbf{Computation of a String on a DFA (Section 1)} \\
-\emph{Question 1: Trace the computation on input $w = abba$. 
-List the sequence of states visited (including start state) and state whether the input $w$ is accepted.} \\
+\item \textbf{Converting an NFA to a DFA (Section 1)} \\
+\emph{Question 1: Given the following NFA, create a DFA that recognizes the same language using subset construction by giving the final state diagram of the DFA.}
 
-\[
-q_0 \xrightarrow{a} q_1 \xrightarrow{b} q_0 \xrightarrow{b} q_0 \xrightarrow{a} q_1
-\]
-
-The input $w$ is \textbf{not accepted} because the final state $q_1$ is not in $F$.
-
-\item \textbf{Drawing a DFA (Section 2)} \\
-\emph{Question 5: Draw a DFA over the alphabet $\{0,1\}$ that accepts all strings containing an even number of 0’s.}
-
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\linewidth]{images/cse105q5.png}
-    \caption{DFA accepting strings with an even number of 0’s.}
+    \includegraphics[width=1\linewidth]{hw3q1.png}
+    \caption{Solution}
+    \label{fig:placeholder}
 \end{figure}
 
-\item \textbf{Describing what a DFA does (Section 3)} \\
-\emph{Question 9: Describe in words the set of strings accepted by $S$.
-Give two examples of strings $S$ accepts and two it rejects.} \\
+\pagebreak 
 
-\textbf{Description:} The set of strings accepted by $S$ includes all strings over the described $\Sigma$ that end in \texttt{1}. \\[0.5em]
-\textbf{Accepted Strings:} 01, 11 \\
-\textbf{Rejected Strings:} $" "$, 10
+\item \textbf{Languages Described by Regular Expressions (Section 2)} \\
+\emph{Question 5: Describe in words the language given by the regular expressions $R=1^*010^*$ over $\Sigma = \{0,1\}$ and 5 strings in the language and 5 strings not in the language.}
+
+\textbf{Solution:}
+\\$R=1^*010^*$ over $\Sigma=\{0,1\}$ describes the language $L$ over $\Sigma$ containing all the strings that have the substring "$01$" exactly once, that is preceded by 1's (could be zero 1's) and followed by 0's (possibly zero 0's).
+\\\underline{Strings accepted:} \{"01", "1101", "010", "1010", "11010"\}
+\\\underline{Strings not accepted:} \{"", "1", "0", "10", "111000"\}
 
 \pagebreak
 
-\item \textbf{Formal Definition of a DFA (Section 4)} \\
-\emph{Question 13: Given the DFA below, write its 5-tuple $(Q, \Sigma, \delta, q_0, F)$ explicitly. Use a table to define $\delta$.} \\
+\item \textbf{Converting from Regular Expressions (Section 3)} \\
+\emph{Question 10: Create an NFA that recognizes the same language as $L(((11)^*0^*1)\cup((00)^*1^*0)^*)$ over $\Sigma=\{0,1\}$.}
 
-\[
-Q = \{q_1, q_2\}, \quad \Sigma = \{a,b\}, \quad q_0 = q_2, \quad F = \{q_1\}.
-\]
+% Add your answer content here
 
-\begin{center}
-\begin{tabular}{||c||c c||}
-\hline
-$\delta$ & a & b \\
-\hline\hline
-$q_1$ & $q_1$ & $q_2$ \\
-\hline
-$q_2$ & $q_1$ & $q_2$ \\
-\hline
-\end{tabular}
-\end{center}
+\pagebreak 
+
+\item \textbf{Converting from Automata to Regular Expressions (Section 4)} \\
+\emph{Question 13: Given the DFA $D$ and $D$'s state diagram given below, find the regular expression $R$ such that $L(R)=L(D)$ by constructing a GNFA. Give all of the steps of your GNFA construction alongside $R$.}
+
+% Add your answer content here
+
+\pagebreak
+
+\item \textbf{Proving Closure of Regular Operations Using Regular Expressions (Section 5)} \\
+\emph{Question 17: Given a regular language $L$, recall that the reversal of the language is denoted as $L^R$, and it is the language of all the strings in $L$, but they are reversed. Given any regular expression $R$, prove that $L(R)^R$ is regular by constructing a regular expression $R^R$ such that $L(R^R) = L(R)^R$.}
+
+% Add your answer content here
 
 \end{enumerate}
 
