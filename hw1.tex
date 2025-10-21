@@ -84,7 +84,23 @@
 \item \textbf{Proving Closure of Regular Operations Using Regular Expressions (Section 5)} \\
 \emph{Question 17: Given a regular language $L$, recall that the reversal of the language is denoted as $L^R$, and it is the language of all the strings in $L$, but they are reversed. Given any regular expression $R$, prove that $L(R)^R$ is regular by constructing a regular expression $R^R$ such that $L(R^R) = L(R)^R$.}
 
-% Add your answer content here
+\\\underline{Case 1 - $R=R_1R_2$:} $L(R)=L(R_1)L(R_2)$ \newline
+\phantom{Case 1 - $R=R_1R_2$:} $L(R)^R=(L(R_1)L(R_2))^R$ \newline
+\phantom{Case 1 - $R=R_1R_2$:} $L(R)^R=L(R_2)^RL(R_1)^R$ \newline
+\phantom{Case 1 - $R=R_1R_2$:} \therefore ~ $R^R$ is closed under multiplication \newline
+
+\\\underline{Case 2 - $R=R_1^*$:} $L(R)=(L(R_1))^*$ \newline
+\phantom{Case 1 - $R=R_1R_2$:} $L(R)^R=(L(R_1)^n)^R$ \newline
+\phantom{Case 1 - $R=R_1R_2$:} $L(R)^R=(L(R_1)^R)^n$ \newline
+\phantom{Case 1 - $R=R_1R_2$:} $L(R)^R=(L(R_1)^R)^*$ \newline
+\phantom{Case 1 - $R=R_1R_2$:} \therefore ~ $R^R$ is closed under concatenation \newline
+
+\\\underline{Case 1 - $R=R_1+R_2$:} $L(R)=L(R_1) \cup L(R_2)$ \newline
+\phantom{Case 1 - $R=R_1R_2$:} $L(R)^R=L(R_1)^R \cup L(R_2)^R$ \newline
+\phantom{Case 1 - $R=R_1R_2$:} $L(R_1)^R=L(R_1^R)$ and $L(R_2)^R=L(R_2^R)$ so $L(R)^R=L(R_1^R) \cup L(R_2^R)$  \newline
+\phantom{Case 1 - $R=R_1R_2$:} \therefore ~ $R^R$ is closed under addition \newline
+
+Because all three conditions of closure are met with $L(R)^R, L(R)^R$ is regular.
 
 \end{enumerate}
 
