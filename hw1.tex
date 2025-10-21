@@ -25,7 +25,7 @@
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=1\linewidth]{hw3q1.png}
+    \includegraphics[width=1\linewidth]{images/hw3q1.png}
     \caption{Solution}
     \label{fig:placeholder}
 \end{figure}
@@ -47,7 +47,7 @@
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\linewidth]{hw3q10p1.jpg}
+    \includegraphics[width=0.75\linewidth]{images/hw3q10p1.jpg}
     \caption{Solution pt. 1}
     \label{fig:placeholder}
 \end{figure}
@@ -56,7 +56,7 @@
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\linewidth]{hw3q10p2.jpg}
+    \includegraphics[width=0.75\linewidth]{images/hw3q10p2.jpg}
     \caption{Solution pt. 2}
     \label{fig:placeholder}
 \end{figure}
@@ -84,23 +84,35 @@
 \item \textbf{Proving Closure of Regular Operations Using Regular Expressions (Section 5)} \\
 \emph{Question 17: Given a regular language $L$, recall that the reversal of the language is denoted as $L^R$, and it is the language of all the strings in $L$, but they are reversed. Given any regular expression $R$, prove that $L(R)^R$ is regular by constructing a regular expression $R^R$ such that $L(R^R) = L(R)^R$.}
 
-\\\underline{Case 1 - $R=R_1R_2$:} $L(R)=L(R_1)L(R_2)$ \newline
-\phantom{Case 1 - $R=R_1R_2$:} $L(R)^R=(L(R_1)L(R_2))^R$ \newline
-\phantom{Case 1 - $R=R_1R_2$:} $L(R)^R=L(R_2)^RL(R_1)^R$ \newline
-\phantom{Case 1 - $R=R_1R_2$:} \therefore ~ $R^R$ is closed under multiplication \newline
+\medskip
 
-\\\underline{Case 2 - $R=R_1^*$:} $L(R)=(L(R_1))^*$ \newline
-\phantom{Case 1 - $R=R_1R_2$:} $L(R)^R=(L(R_1)^n)^R$ \newline
-\phantom{Case 1 - $R=R_1R_2$:} $L(R)^R=(L(R_1)^R)^n$ \newline
-\phantom{Case 1 - $R=R_1R_2$:} $L(R)^R=(L(R_1)^R)^*$ \newline
-\phantom{Case 1 - $R=R_1R_2$:} \therefore ~ $R^R$ is closed under concatenation \newline
+\underline{Case 1: $R = R_1R_2$} \\
+$L(R) = L(R_1)L(R_2)$ \\
+$L(R)^R = (L(R_1)L(R_2))^R$ \\
+$L(R)^R = L(R_2)^R L(R_1)^R$ \\
+$\therefore~ R^R$ is closed under concatenation.
 
-\\\underline{Case 1 - $R=R_1+R_2$:} $L(R)=L(R_1) \cup L(R_2)$ \newline
-\phantom{Case 1 - $R=R_1R_2$:} $L(R)^R=L(R_1)^R \cup L(R_2)^R$ \newline
-\phantom{Case 1 - $R=R_1R_2$:} $L(R_1)^R=L(R_1^R)$ and $L(R_2)^R=L(R_2^R)$ so $L(R)^R=L(R_1^R) \cup L(R_2^R)$  \newline
-\phantom{Case 1 - $R=R_1R_2$:} \therefore ~ $R^R$ is closed under addition \newline
+\medskip
 
-Because all three conditions of closure are met with $L(R)^R, L(R)^R$ is regular.
+\underline{Case 2: $R = R_1^*$} \\
+$L(R) = (L(R_1))^*$ \\
+$L(R)^R = ((L(R_1))^*)^R$ \\
+$L(R)^R = (L(R_1)^R)^*$ \\
+$\therefore~ R^R$ is closed under Kleene star.
+
+\medskip
+
+\underline{Case 3: $R = R_1 + R_2$} \\
+$L(R) = L(R_1) \cup L(R_2)$ \\
+$L(R)^R = (L(R_1) \cup L(R_2))^R$ \\
+$L(R)^R = L(R_1)^R \cup L(R_2)^R$ \\
+Since $L(R_1)^R = L(R_1^R)$ and $L(R_2)^R = L(R_2^R)$, we have \\
+$L(R)^R = L(R_1^R) \cup L(R_2^R)$ \\
+$\therefore~ R^R$ is closed under union.
+
+\medskip
+
+Because all three closure conditions
 
 \end{enumerate}
 
